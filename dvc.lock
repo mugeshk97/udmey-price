@@ -46,15 +46,15 @@ stages:
       size: 730
     params:
       params.yaml:
-        RandomForest.depth: 30
+        RandomForest.depth: 5
         RandomForest.estimators: 200
     outs:
     - path: model/model.pkl
-      md5: 77e5fb4ba8a6020adca53891eb1caeca
-      size: 47001638
+      md5: 0431c40d4582f70752ee113029fbe05b
+      size: 710603
     - path: report/params.json
-      md5: 28663a849d415fa237e1587b7ffd6a29
-      size: 48
+      md5: b5d0102969c01ffb381073a949410693
+      size: 47
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -62,12 +62,12 @@ stages:
       md5: 5449cbc34ba8418cc1e9e9d201941ae7
       size: 15204
     - path: model/model.pkl
-      md5: 77e5fb4ba8a6020adca53891eb1caeca
-      size: 47001638
+      md5: 0431c40d4582f70752ee113029fbe05b
+      size: 710603
     - path: src/evaluate.py
       md5: 0fbcb954262665e42f96d4016f33b550
       size: 493
     outs:
     - path: report/metrics.json
-      md5: 00d9eff6a5841b79b5a79219a8860b40
+      md5: 9a804534987191c40f1e4a0468f9a913
       size: 32

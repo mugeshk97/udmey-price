@@ -16,7 +16,7 @@ Test_Config:
 
 RandomForest:
   estimators: 200
-  depth: 30
+  depth: 5
 
 Model:
   path: model/model.pkl
