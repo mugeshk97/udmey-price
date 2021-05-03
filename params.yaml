@@ -1,27 +1,27 @@
 Config:
-  random_seed : 28
-  data_source : 'data/original/udemy_courses.csv'
+  random_seed: 28
+  data_source: data/original/udemy_courses.csv
 
 
 Train_Config:
-  path : 'data/train_test/train.csv'
-  features : ["num_lectures", "price", "days_since_published", "content_duration", "num_subscribers"]
-  target : 'num_subscribers'
-  feature_path : 'data/feature/train_feature.csv'
+  path: data/train_test/train.csv
+  features: [num_lectures, price, days_since_published, content_duration, num_subscribers]
+  target: num_subscribers
+  feature_path: data/feature/train_feature.csv
 
 Test_Config:
-  path : 'data/train_test/test.csv'
-  feature_path : 'data/feature/test_feature.csv'
+  path: data/train_test/test.csv
+  feature_path: data/feature/test_feature.csv
 
 
 RandomForest:
-  estimators : 200
-  depth : 16
+  estimators: 200
+  depth: 30
 
 Model:
-  path : 'model/model.pkl'
+  path: model/model.pkl
 
 
 Report:
-  metrics_path : 'report/metrics.json'
-  params_path : 'report/params.json'
+  metrics_path: report/metrics.json
+  params_path: report/params.json
