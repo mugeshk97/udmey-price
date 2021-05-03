@@ -1,5 +1,5 @@
 Config:
-  random_seed : 42
+  random_seed : 28
   data_source : 'data/original/udemy_courses.csv'
 
 
@@ -15,8 +15,8 @@ Test_Config:
 
 
 RandomForest:
-  estimators : 100
-  depth : 10
+  estimators : 200
+  depth : 16
 
 Model:
   path : 'model/model.pkl'
