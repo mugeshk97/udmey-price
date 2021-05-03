@@ -1,0 +1,38 @@
+stages:
+  create_data:
+    cmd: python src/create_data.py
+    deps:
+    - data/original/udemy_courses.csv
+    - src/create_data.py
+    outs:
+    - data/train_test/test.csv
+    - data/train_test/train.csv
+  feature:
+    cmd: python src/feature.py
+    deps:
+    - data/train_test/test.csv
+    - data/train_test/train.csv
+    - src/feature.py
+    outs:
+    - data/feature/test_feature.csv
+    - data/feature/train_feature.csv
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/feature/train_feature.csv
+    - src/train.py
+    params:
+    - RandomForest.depth
+    - RandomForest.estimators
+    outs:
+    - model/model.pkl
+    - report/params.json
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/feature/test_feature.csv
+    - model/model.pkl
+    - src/evaluate.py
+    metrics:
+    - report/metrics.json:
+        cache: false
